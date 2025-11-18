@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Paballo Leqhotsa</title>
+    <meta name="description" content="Explore Paballo Leqhotsa's portfolio of software development projects including web applications, Java programs, and database systems">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navbar"></div>
+
+    <!-- Projects Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">My Projects</h1>
+            <p class="page-subtitle">A collection of my work in software development and programming - from concept to implementation</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="container">
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="java">Java Applications</button>
+                <button class="filter-btn" data-filter="python">Python Projects</button>
+                <button class="filter-btn" data-filter="database">Database Systems</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card show" data-category="web python">
+                    <div class="project-img" style="background: linear-gradient(135deg, var(--yellow), var(--pink));">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-status">
+                            <span class="status development">In Development</span>
+                        </div>
+                        <h3 class="project-title">Mathematics Learning Platform</h3>
+                        <p class="project-description">A comprehensive web application designed to help students understand complex mathematical concepts through interactive tutorials, practice problems, and real-time feedback system.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Interactive math tutorials with step-by-step solutions</li>
+                                <li>Practice problem generator with varying difficulty levels</li>
+                                <li>Progress tracking and performance analytics</li>
+                                <li>Real-time feedback system for immediate learning</li>
+                                <li>User authentication and personalized learning paths</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/math-learning-platform" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card show" data-category="java database">
+                    <div class="project-img" style="background: linear-gradient(135deg, var(--pink), var(--turquoise));">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-status">
+                            <span class="status completed">Completed</span>
+                        </div>
+                        <h3 class="project-title">E-commerce Database System</h3>
+                        <p class="project-description">A comprehensive database management system for tracking inventory, customers, and sales for small to medium businesses with advanced reporting capabilities and user management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Database Design</span>
+                            <span class="tech-tag">Swing GUI</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Complete inventory management with stock tracking</li>
+                                <li>Customer relationship management with purchase history</li>
+                                <li>Sales analytics and reporting with visual charts</li>
+                                <li>Secure user authentication and role-based access</li>
+                                <li>Automated email notifications for orders and restocking</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/ecommerce-database" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card show" data-category="python web">
+                    <div class="project-img" style="background: linear-gradient(135deg, var(--turquoise), var(--yellow));">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-status">
+                            <span class="status planning">In Planning</span>
+                        </div>
+                        <h3 class="project-title">Student Chatbot Assistant</h3>
+                        <p class="project-description">An AI-powered chatbot that helps university students find information about courses, schedules, campus resources, and academic support services through natural language processing.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API Integration</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Natural language processing for student queries</li>
+                                <li>Course information retrieval and schedule management</li>
+                                <li>Campus resource directory with location services</li>
+                                <li>24/7 availability with contextual responses</li>
+                                <li>Integration with university systems and databases</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code Coming Soon
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo Coming Soon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card show" data-category="java">
+                    <div class="project-img" style="background: linear-gradient(135deg, var(--yellow), var(--pink));">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-status">
+                            <span class="status completed">Completed</span>
+                        </div>
+                        <h3 class="project-title">Task Management Application</h3>
+                        <p class="project-description">A desktop application for personal task management with features for organizing, prioritizing, and tracking completion of daily tasks and projects with intuitive user interface.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">JavaFX</span>
+                            <span class="tech-tag">File I/O</span>
+                            <span class="tech-tag">Data Structures</span>
+                            <span class="tech-tag">Local Storage</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Task categorization with custom labels and tags</li>
+                                <li>Priority setting with color-coded urgency levels</li>
+                                <li>Due date tracking with reminder notifications</li>
+                                <li>Progress visualization with completion statistics</li>
+                                <li>Data export functionality for backup and reporting</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/task-manager" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card show" data-category="web database">
+                    <div class="project-img" style="background: linear-gradient(135deg, var(--pink), var(--turquoise));">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-status">
+                            <span class="status development">In Development</span>
+                        </div>
+                        <h3 class="project-title">Library Management System</h3>
+                        <p class="project-description">A web-based library management system for tracking books, members, loans, and returns with automated notifications and comprehensive reporting features for librarians.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Complete book catalog management with search functionality</li>
+                                <li>Member registration and profile management</li>
+                                <li>Loan tracking with due date calculations</li>
+                                <li>Automated overdue notifications via email</li>
+                                <li>Comprehensive reporting for library analytics</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/library-management" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card show" data-category="python">
+                    <div class="project-img" style="background: linear-gradient(135deg, var(--turquoise), var(--yellow));">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-status">
+                            <span class="status completed">Completed</span>
+                        </div>
+                        <h3 class="project-title">Data Analysis Toolkit</h3>
+                        <p class="project-description">A Python-based data analysis toolkit for processing, visualizing, and analyzing datasets with statistical functions and machine learning capabilities for academic research.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Data preprocessing and cleaning utilities</li>
+                                <li>Statistical analysis with hypothesis testing</li>
+                                <li>Data visualization with customizable charts</li>
+                                <li>Machine learning model implementation</li>
+                                <li>Export functionality for reports and visualizations</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/data-analysis-toolkit" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-book"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
