@@ -252,7 +252,7 @@ function initTypingEffect() {
     if (!subtitle) return;
     
     const texts = [
-        'Computer Science Graduate, 
+        'Computer Science Graduate', 
         'Aspiring Software Engineer',
         'Mathematics Tutor',
         'Software Development',
@@ -433,4 +433,5 @@ if ('serviceWorker' in navigator) {
     });
 
 }
+
 
