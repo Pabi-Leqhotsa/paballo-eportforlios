@@ -252,10 +252,11 @@ function initTypingEffect() {
     if (!subtitle) return;
     
     const texts = [
-        'Computer Science Graduate, Aspiring Software Engineering and Mathematics Tutor',
-        'Software Engineering',
+        'Computer Science Graduate, 
+        'Aspiring Software Engineer',
+        'Mathematics Tutor',
+        'Software Development',
         'Problem Solver',
-        'Lifelong Learner'
     ];
     
     let textIndex = 0;
@@ -432,3 +433,4 @@ if ('serviceWorker' in navigator) {
     });
 
 }
+
