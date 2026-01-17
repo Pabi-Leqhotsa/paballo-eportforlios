@@ -252,8 +252,8 @@ function initTypingEffect() {
     if (!subtitle) return;
     
     const texts = [
-        'Computer Science Student & Mathematics Tutor',
-        'Full-Stack Developer',
+        'Computer Science Graduate, Aspiring Software Engineering and Mathematics Tutor',
+        'Software Engineering',
         'Problem Solver',
         'Lifelong Learner'
     ];
@@ -430,4 +430,5 @@ if ('serviceWorker' in navigator) {
                 console.log('ServiceWorker registration failed: ', error);
             });
     });
+
 }
