@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayne Intend Pools - Luxury Swimming Pools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add EmailJS library - No longer needed for our approach -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        /* === YOUR EXISTING CSS CODE - COMPLETELY UNCHANGED === */
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a6db3;
+            --secondary: #0a4d8c;
+            --accent: #34b7f1;
+            --light: #f0f9ff;
+            --dark: #333;
+            --gray: #777;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .btn-call {
+            background-color: var(--accent);
+        }
+
+        .btn-call:hover {
+            background-color: #1a9cd8;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .logo-pol {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-left: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section - CHANGE BACKGROUND IMAGE HERE */
+        .hero {
+            /* Change this line to use your local image */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 180px 0 120px;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--shadow);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-placeholder {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            height: 100%;
+            color: var(--gray);
+        }
+
+        .portfolio-placeholder i {
+            font-size: 60px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-buttons .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-logo .logo-pol {
+            color: var(--accent);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4:after,
+        .footer-contact h4:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* === EXISTING ABOUT & MISSION SECTION === */
+        .about-mission {
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px; /* Added height for the image */
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .mission-card, .vision-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .mission-icon, .vision-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* === EXISTING ADMIN PANEL STYLES === */
+        .admin-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        
+        .admin-btn {
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+        
+        .admin-btn:hover {
+            background-color: var(--secondary);
+            transform: scale(1.1);
+        }
+        
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .admin-modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .admin-modal h3 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .admin-form-group {
+            margin-bottom: 20px;
+        }
+        
+        .admin-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .admin-form-group input, 
+        .admin-form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .admin-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .admin-buttons .btn {
+            flex: 1;
+        }
+        
+        .close-admin {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            color: var(--dark);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .image-preview {
+            width: 100%;
+            height: 150px;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .video-preview {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .admin-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .admin-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .admin-tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .admin-tab-content {
+            display: none;
+        }
+        
+        .admin-tab-content.active {
+            display: block;
+        }
+        
+        .portfolio-item .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .admin-mode .portfolio-item .delete-btn {
+            display: flex;
+        }
+        
+        .video-label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* === EXISTING TESTIMONIALS & REVIEWS SECTION === */
+        .testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .testimonial-rating {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .author-info p {
+            margin-bottom: 0;
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Review Form */
+        .review-form-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .review-form-container h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+        
+        .rating-input {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .rating-input label {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .stars {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .star {
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .star:hover,
+        .star.active {
+            color: #FFD700;
+        }
+        
+        .review-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .review-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .review-form .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .testimonial-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .testimonial-stats {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        /* === REMOVED FORM-RELATED CSS === */
+        
+        /* Business hours styling */
+        .business-hours {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(26, 109, 179, 0.1);
+            border-radius: 10px;
+        }
+        
+        .business-hours h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .business-hours p {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        /* Small text for contact details */
+        .contact-details small {
+            display: block;
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        /* Additional button colors */
+        .btn-email {
+            background-color: #34b7f1;
+        }
+        
+        .btn-email:hover {
+            background-color: #1a9cd8;
+        }
+        
+        .btn-map {
+            background-color: #6c757d;
+        }
+        
+        .btn-map:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">WAYNE<span>INTEND</span></div>
+                <div class="logo-pol">POOL</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Dive into Luxury with Custom-Designed Swimming Pools!</h1>
+            <p>Transform your backyard into a stunning oasis with Wayne Intend Pools. We specialize in creating beautiful, functional, and luxurious swimming pools tailored to your vision.</p>
+            <a href="#contact" class="btn">Contact us</a>
+        </div>
+    </section>
+
+    <!-- About & Mission Section -->
+    <section class="about-mission" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Wayne Intend Pools</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Trusted Pool Specialists</h3>
+                    <p>With years of experience in the pool construction and renovation industry, Wayne Intend Pools has established itself as a leader in creating breathtaking aquatic spaces. We combine technical expertise with artistic vision to transform ordinary backyards into extraordinary retreats.</p>
+                    <p>Our team of certified professionals is dedicated to delivering exceptional quality, from initial design to final construction. We understand that a pool is more than just a water feature, it's the centerpiece of family memories, relaxation, and entertainment.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission-card">
+                            <div class="mission-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>To create exceptional swimming environments that enhance lifestyles through innovative design, superior craftsmanship, and unwavering commitment to customer satisfaction.</p>
+                        </div>
+                        
+                        <div class="vision-card">
+                            <div class="vision-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>To be the most trusted and preferred pool construction company in the Western Cape, recognized for transforming outdoor spaces into luxurious, functional, and sustainable aquatic retreats.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="images/about-pool.jpg" alt="Wayne Intend Pool Construction" onerror="this.src='https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Salt Chlorinators</h3>
+                    <p>Advanced salt chlorination systems for cleaner, gentler pool water without harsh chemicals.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Pool Renovation</h3>
+                    <p>Transform your outdated pool into a modern masterpiece with our renovation services.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>All Ranges of Paving</h3>
+                    <p>Beautiful and durable paving solutions to complement your pool area and landscape.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Resealing & Cleaning</h3>
+                    <p>Professional resealing and cleaning services to maintain your pool's beauty and integrity.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Fibreglass Renovations</h3>
+                    <p>Expert fibreglass pool repairs and renovations to extend the life of your pool.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Repairs & Maintenance</h3>
+                    <p>Comprehensive pool repairs, installations, and maintenance services to keep your pool perfect.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Solar Heating</h3>
+                    <p>Eco-friendly solar heating solutions to extend your swimming season and reduce costs.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Home Renovation</h3>
+                    <p>Interior and exterior home renovation services to match your new pool oasis.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Koi Ponds & Water Features</h3>
+                    <p>Design and construction of beautiful koi ponds, filtration systems, and water features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Portfolio</h2>
+                <p>Browse our gallery of completed projects.</p>
+            </div>
+            
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Portfolio images will be loaded here from the images folder -->
+                <div class="portfolio-item">
+                    <img src="images/img1.jpeg" alt="Pool Design 1" class="portfolio-img">
+                    <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                </div>
+                
+                <div class="portfolio-item">
+                   <img src="images/img2.jpeg" alt="Pool Design 2" class="portfolio-img">
+                   <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/img3.jpeg" alt="Pool Design 3" class="portfolio-img">
+                    <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/img4.jpeg" alt="Pool Design 4" class="portfolio-img">
+                    <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/img5.jpeg" alt="Pool Design 5" class="portfolio-img">
+                    <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/img6.jpeg" alt="Pool Design 6" class="portfolio-img">
+                    <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Reviews Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Testimonials</h2>
+                <p>See what our satisfied customers have to say about our services</p>
+            </div>
+            
+            <div class="testimonials-container" id="testimonialsContainer">
+                <!-- Testimonials will be loaded here -->
+            </div>
+            
+            <div class="testimonial-actions">
+                <div class="testimonial-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="averageRating">4.9</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalReviews">12</span>
+                        <span class="stat-label">Total Reviews</span>
+                    </div>
+                </div>
+                
+                <button class="btn" id="showReviewFormBtn">Leave a Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Form Modal -->
+    <div class="admin-modal" id="reviewModal">
+        <div class="admin-modal-content">
+            <button class="close-admin" id="closeReviewModal">&times;</button>
+            <div class="review-form-container">
+                <h3>Share Your Experience</h3>
+                <form id="reviewForm">
+                    <div class="rating-input">
+                        <label for="rating">Your Rating</label>
+                        <div class="stars" id="ratingStars">
+                            <span class="star" data-rating="1">★</span>
+                            <span class="star" data-rating="2">★</span>
+                            <span class="star" data-rating="3">★</span>
+                            <span class="star" data-rating="4">★</span>
+                            <span class="star" data-rating="5">★</span>
+                        </div>
+                        <input type="hidden" id="ratingValue" value="5">
+                    </div>
+                    
+                    <div class="form-row">
+                        <input type="text" id="reviewerName" placeholder="Your Name" required>
+                        <input type="email" id="reviewerEmail" placeholder="Your Email">
+                    </div>
+                    
+                    <div class="form-row">
+                        <select id="serviceType" required>
+                            <option value="">Select Service</option>
+                            <option value="Pool Construction">Pool Construction</option>
+                            <option value="Pool Renovation">Pool Renovation</option>
+                            <option value="Maintenance">Maintenance & Repairs</option>
+                            <option value="Paving">Paving</option>
+                            <option value="Solar Heating">Solar Heating</option>
+                            <option value="Koi Pond">Koi Pond & Water Features</option>
+                            <option value="Other">Other Service</option>
+                        </select>
+                        <input type="text" id="location" placeholder="Your Location (e.g., Cape Town)">
+                    </div>
+                    
+                    <textarea id="reviewText" placeholder="Tell us about your experience with Wayne Intend Pools..." required></textarea>
+                    
+                    <div class="admin-buttons">
+                        <button type="submit" class="btn">Submit Review</button>
+                        <button type="button" class="btn btn-call" id="cancelReviewBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for a free consultation and quote for your dream pool</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to transform your backyard into a luxurious oasis? Contact Wayne Intend Pools today for expert advice and professional service.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+27 63 084 9731</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>intendpools@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>60 Princess Alice Ave, Brooklyn, Cape Town, Western Cape 7405</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/27630849731?text=Hi%20Wayne%20Intend%20Pools!%20I%20saw%20your%20website%20and%20I'm%20interested%20in%20your%20pool%20services." 
+                           class="btn btn-whatsapp" 
+                           target="_blank"
+                           id="whatsappBtn">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Us
+                        </a>
+                        <a href="tel:+27630849731" class="btn btn-call" id="callBtn">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="https://maps.google.com/?q=60+Princess+Alice+Ave,+Brooklyn,+Cape+Town,+Western+Cape+7405" 
+                           class="btn btn-map"
+                           target="_blank">
+                            <i class="fas fa-map-marker-alt"></i> Get Directions
+                        </a>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h4 style="margin-top: 30px;">Business Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        <p>Sunday: Emergency calls only</p>
+                    </div>
+                </div>
+                
+                <!-- FORM SECTION REMOVED -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">WAYNE<span>INTEND</span><span class="logo-pol">POOL</span></div>
+                    <p>Transforming backyards into stunning oases with custom-designed swimming pools and premium renovation services in the Western Cape.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +27 63 084 9731</p>
+                    <p><i class="fas fa-envelope"></i> intendpools@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 60 Princess Alice Ave, Brooklyn, Cape Town, Western Cape 7405</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Wayne Intend Pools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Panel Button -->
+    <div class="admin-panel">
+        <div class="admin-btn" id="adminBtn">
+            <i class="fas fa-user-cog"></i>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-modal-content">
+            <button class="close-admin" id="closeAdmin">&times;</button>
+            <h3>Admin Panel</h3>
+            
+            <div class="admin-tabs">
+                <div class="admin-tab active" data-tab="upload">Upload Media</div>
+                <div class="admin-tab" data-tab="manage">Manage Portfolio</div>
+                <div class="admin-tab" data-tab="testimonials">Manage Testimonials</div>
+                <div class="admin-tab" data-tab="contact">Contact Submissions</div>
+                <div class="admin-tab" data-tab="settings">Settings</div>
+            </div>
+            
+            <!-- Upload Media Tab -->
+            <div class="admin-tab-content active" id="uploadTab">
+                <div class="admin-form-group">
+                    <label for="mediaType">Media Type</label>
+                    <select id="mediaType">
+                        <option value="image">Image</option>
+                        <option value="video">Video</option>
+                    </select>
+                </div>
+                
+                <div class="admin-form-group" id="imageUploadGroup">
+                    <label for="imageUpload">Upload Image</label>
+                    <input type="file" id="imageUpload" accept="image/*">
+                    <div class="image-preview" id="imagePreview">
+                        <p>Image preview will appear here</p>
+                    </div>
+                </div>
+                
+                <div class="admin-form-group" id="videoUploadGroup" style="display: none;">
+                    <label for="videoUrl">Video URL (YouTube or direct link)</label>
+                    <input type="text" id="videoUrl" placeholder="Paste YouTube URL or direct video link">
+                    <div class="video-preview" id="videoPreview">
+                        <p>Video will be embedded here</p>
+                    </div>
+                </div>
+                
+                <div class="admin-form-group">
+                    <label for="mediaTitle">Title/Caption</label>
+                    <input type="text" id="mediaTitle" placeholder="Enter a title or caption for this media">
+                </div>
+                
+                <div class="admin-buttons">
+                    <button class="btn" id="uploadMediaBtn">Add to Portfolio</button>
+                    <button class="btn btn-call" id="clearFormBtn">Clear Form</button>
+                </div>
+            </div>
+            
+            <!-- Manage Portfolio Tab -->
+            <div class="admin-tab-content" id="manageTab">
+                <p>Toggle admin mode to delete portfolio items. Click the admin button again to exit admin mode.</p>
+                <button class="btn" id="toggleAdminModeBtn">Toggle Admin Mode</button>
+                <p class="video-label">Current Portfolio Items: <span id="itemCount">0</span></p>
+            </div>
+            
+            <!-- Manage Testimonials Tab -->
+            <div class="admin-tab-content" id="testimonialsTab">
+                <div class="admin-form-group">
+                    <label>Testimonials Management</label>
+                    <p>Toggle admin mode to delete testimonials. All testimonials are stored in browser storage.</p>
+                </div>
+                <button class="btn" id="toggleTestimonialAdminBtn">Toggle Testimonial Admin Mode</button>
+                <button class="btn btn-call" id="addSampleTestimonialsBtn">Add Sample Testimonials</button>
+                <button class="btn" id="clearAllTestimonialsBtn" style="background-color: #dc3545;">Clear All Testimonials</button>
+                <p class="video-label">Current Testimonials: <span id="testimonialCount">0</span></p>
+            </div>
+            
+            <!-- Contact Submissions Tab -->
+            <div class="admin-tab-content" id="contactTab">
+                <h4>Contact Form Submissions</h4>
+                <div id="submissionsList" style="max-height: 300px; overflow-y: auto; margin-bottom: 20px;">
+                    <p>Loading submissions...</p>
+                </div>
+                <div class="admin-buttons">
+                    <button class="btn" onclick="exportSubmissions()">
+                        <i class="fas fa-download"></i> Export as CSV
+                    </button>
+                    <button class="btn btn-call" onclick="clearAllSubmissions()">
+                        <i class="fas fa-trash"></i> Clear All Submissions
+                    </button>
+                </div>
+                <p class="video-label" style="margin-top: 20px;">Total Submissions: <span id="totalSubmissions">0</span></p>
+            </div>
+            
+            <!-- Settings Tab -->
+            <div class="admin-tab-content" id="settingsTab">
+                <div class="admin-form-group">
+                    <label for="adminPassword">Set Admin Password</label>
+                    <input type="password" id="adminPassword" placeholder="Enter a password for admin access">
+                    <small>Set a password to secure the admin panel. Remember it!</small>
+                </div>
+                
+                <div class="admin-form-group">
+                    <label for="heroImage">Update Hero Background</label>
+                    <input type="file" id="heroImage" accept="image/*">
+                    <small>Upload a new background image for the hero section</small>
+                </div>
+                
+                <div class="admin-buttons">
+                    <button class="btn" id="saveSettingsBtn">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // === YOUR EXISTING JAVASCRIPT CODE ===
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // === ADMIN PANEL FUNCTIONALITY ===
+        
+        // Admin Panel Elements
+        const adminBtn = document.getElementById('adminBtn');
+        const adminModal = document.getElementById('adminModal');
+        const closeAdmin = document.getElementById('closeAdmin');
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const adminTabContents = document.querySelectorAll('.admin-tab-content');
+        const mediaType = document.getElementById('mediaType');
+        const imageUploadGroup = document.getElementById('imageUploadGroup');
+        const videoUploadGroup = document.getElementById('videoUploadGroup');
+        const imageUpload = document.getElementById('imageUpload');
+        const imagePreview = document.getElementById('imagePreview');
+        const videoUrl = document.getElementById('videoUrl');
+        const videoPreview = document.getElementById('videoPreview');
+        const uploadMediaBtn = document.getElementById('uploadMediaBtn');
+        const clearFormBtn = document.getElementById('clearFormBtn');
+        const toggleAdminModeBtn = document.getElementById('toggleAdminModeBtn');
+        const saveSettingsBtn = document.getElementById('saveSettingsBtn');
+        const heroImage = document.getElementById('heroImage');
+        const adminPassword = document.getElementById('adminPassword');
+        
+        // Password for admin access - SET TO THE STATIC PASSWORD "24tafadzwas"
+        let savedPassword = localStorage.getItem('wayneIntendAdminPassword') || '24tafadzwas';
+        // Ensure the static password is saved to localStorage
+        if (!localStorage.getItem('wayneIntendAdminPassword')) {
+            localStorage.setItem('wayneIntendAdminPassword', '24tafadzwas');
+        }
+        
+        // Portfolio data stored in localStorage
+        let portfolioData = JSON.parse(localStorage.getItem('wayneIntendPortfolio')) || {
+            images: [
+                {src: 'images/img1.jpeg', title: 'Pool Design 1', type: 'image'},
+                {src: 'images/img2.jpeg', title: 'Pool Design 2', type: 'image'},
+                {src: 'images/img3.jpeg', title: 'Pool Design 3', type: 'image'},
+                {src: 'images/img4.jpeg', title: 'Pool Design 4', type: 'image'},
+                {src: 'images/img5.jpeg', title: 'Pool Design 5', type: 'image'},
+                {src: 'images/img6.jpeg', title: 'Pool Design 6', type: 'image'}
+            ]
+        };
+        
+        // === TESTIMONIALS FUNCTIONALITY ===
+        
+        // Testimonials elements
+        const showReviewFormBtn = document.getElementById('showReviewFormBtn');
+        const reviewModal = document.getElementById('reviewModal');
+        const closeReviewModal = document.getElementById('closeReviewModal');
+        const cancelReviewBtn = document.getElementById('cancelReviewBtn');
+        const reviewForm = document.getElementById('reviewForm');
+        const ratingStars = document.querySelectorAll('#ratingStars .star');
+        const ratingValue = document.getElementById('ratingValue');
+        const testimonialsContainer = document.getElementById('testimonialsContainer');
+        const averageRatingEl = document.getElementById('averageRating');
+        const totalReviewsEl = document.getElementById('totalReviews');
+        const testimonialCountEl = document.getElementById('testimonialCount');
+        const toggleTestimonialAdminBtn = document.getElementById('toggleTestimonialAdminBtn');
+        const addSampleTestimonialsBtn = document.getElementById('addSampleTestimonialsBtn');
+        const clearAllTestimonialsBtn = document.getElementById('clearAllTestimonialsBtn');
+        
+        // Testimonials data stored in localStorage
+        let testimonialsData = JSON.parse(localStorage.getItem('wayneIntendTestimonials')) || [];
+        
+        // Sample testimonials for initial display
+        const sampleTestimonials = [
+            {
+                id: 1,
+                name: "Belinda Slabber Pool",
+                email: "",
+                rating: 5,
+                service: "Pool Construction",
+                location: "Cape Town",
+                text: "Wayne Intend Pools transformed our backyard into a paradise! The team was professional, punctual, and the quality of work exceeded our expectations. Our new pool is the highlight of our home.",
+                date: "2025-03-15"
+            },
+            {
+                id: 2,
+                name: "Kelly Newlands",
+                email: "",
+                rating: 5,
+                service: "Pool Renovation",
+                location: "Mitchells Plain",
+                text: "Our 20-year-old pool was looking tired and outdated. Wayne's team completely renovated it with modern features and beautiful paving. It looks brand new! Highly recommended.",
+                date: "2025-02-28"
+            },
+            {
+                id: 3,
+                name: "Shakiel",
+                email: "",
+                rating: 4,
+                service: "Maintenance",
+                location: "Brooklyn",
+                text: "Regular maintenance service is top-notch. They're always on time, thorough, and reasonably priced. Our pool has never been cleaner or better maintained.",
+                date: "2024-10-10"
+            }
+        ];
+        
+        // Initialize everything on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePortfolioDisplay();
+            updateItemCount();
+            
+            // Check if there's a saved hero background
+            const savedHeroBg = localStorage.getItem('wayneIntendHeroBg');
+            if (savedHeroBg) {
+                document.querySelector('.hero').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${savedHeroBg}')`;
+            }
+            
+            // Initialize testimonials
+            if (testimonialsData.length === 0) {
+                testimonialsData = [...sampleTestimonials];
+                localStorage.setItem('wayneIntendTestimonials', JSON.stringify(testimonialsData));
+            }
+            
+            updateTestimonialsDisplay();
+            updateTestimonialStats();
+            
+            // Update submissions count
+            updateSubmissionsCount();
+        });
+        
+        // === STAR RATING FUNCTIONALITY ===
+        ratingStars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-rating');
+                ratingValue.value = rating;
+                
+                // Update star display
+                ratingStars.forEach(s => {
+                    s.classList.remove('active');
+                    if (s.getAttribute('data-rating') <= rating) {
+                        s.classList.add('active');
+                    }
+                });
+            });
+            
+            // Initialize with 5 stars active
+            if (star.getAttribute('data-rating') <= 5) {
+                star.classList.add('active');
+            }
+        });
+        
+        // Show review form
+        showReviewFormBtn.addEventListener('click', function() {
+            reviewModal.style.display = 'flex';
+        });
+        
+        // Close review modal
+        closeReviewModal.addEventListener('click', function() {
+            reviewModal.style.display = 'none';
+        });
+        
+        cancelReviewBtn.addEventListener('click', function() {
+            reviewModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === reviewModal) {
+                reviewModal.style.display = 'none';
+            }
+            if (e.target === adminModal) {
+                adminModal.style.display = 'none';
+            }
+        });
+        
+        // Submit review form
+        reviewForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('reviewerName').value.trim();
+            const email = document.getElementById('reviewerEmail').value.trim();
+            const rating = parseInt(ratingValue.value);
+            const service = document.getElementById('serviceType').value;
+            const location = document.getElementById('location').value.trim();
+            const text = document.getElementById('reviewText').value.trim();
+            
+            if (!name || !service || !text) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            const newTestimonial = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                rating: rating,
+                service: service,
+                location: location,
+                text: text,
+                date: new Date().toISOString().split('T')[0]
+            };
+            
+            testimonialsData.unshift(newTestimonial); // Add to beginning
+            localStorage.setItem('wayneIntendTestimonials', JSON.stringify(testimonialsData));
+            
+            alert('Thank you for your review! It will appear after approval.');
+            
+            // Reset form
+            reviewForm.reset();
+            ratingValue.value = 5;
+            ratingStars.forEach(star => {
+                star.classList.remove('active');
+                if (star.getAttribute('data-rating') <= 5) {
+                    star.classList.add('active');
+                }
+            });
+            
+            reviewModal.style.display = 'none';
+            
+            // Update display
+            updateTestimonialsDisplay();
+            updateTestimonialStats();
+        });
+        
+        // Update testimonials display
+        function updateTestimonialsDisplay() {
+            testimonialsContainer.innerHTML = '';
+            
+            // Sort by date (newest first) and limit to 6 testimonials
+            const sortedTestimonials = [...testimonialsData]
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, 6);
+            
+            sortedTestimonials.forEach(testimonial => {
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'testimonial-card';
+                testimonialCard.dataset.id = testimonial.id;
+                
+                // Generate star rating HTML
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    starsHtml += i <= testimonial.rating ? '★' : '☆';
+                }
+                
+                // Get first letter of name for avatar
+                const firstLetter = testimonial.name.charAt(0).toUpperCase();
+                
+                testimonialCard.innerHTML = `
+                    <div class="testimonial-rating">${starsHtml}</div>
+                    <p class="testimonial-text">"${testimonial.text}"</p>
+                    <span class="service-badge">${testimonial.service}</span>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">${firstLetter}</div>
+                        <div class="author-info">
+                            <h4>${testimonial.name}</h4>
+                            <p>${testimonial.location} • ${testimonial.date}</p>
+                        </div>
+                    </div>
+                    <button class="delete-btn" onclick="deleteTestimonial(this)" style="display: none;">×</button>
+                `;
+                
+                testimonialsContainer.appendChild(testimonialCard);
+            });
+            
+            updateTestimonialCount();
+        }
+        
+        // Update testimonial statistics
+        function updateTestimonialStats() {
+            if (testimonialsData.length === 0) {
+                averageRatingEl.textContent = '0.0';
+                totalReviewsEl.textContent = '0';
+                return;
+            }
+            
+            const totalRating = testimonialsData.reduce((sum, t) => sum + t.rating, 0);
+            const averageRating = totalRating / testimonialsData.length;
+            
+            averageRatingEl.textContent = averageRating.toFixed(1);
+            totalReviewsEl.textContent = testimonialsData.length;
+        }
+        
+        // Update testimonial count
+        function updateTestimonialCount() {
+            testimonialCountEl.textContent = testimonialsData.length;
+        }
+        
+        // Delete testimonial
+        function deleteTestimonial(button) {
+            if (confirm('Are you sure you want to delete this testimonial?')) {
+                const testimonialCard = button.parentElement;
+                const testimonialId = parseInt(testimonialCard.dataset.id);
+                
+                // Remove from testimonials data
+                testimonialsData = testimonialsData.filter(t => t.id !== testimonialId);
+                localStorage.setItem('wayneIntendTestimonials', JSON.stringify(testimonialsData));
+                
+                // Update display
+                updateTestimonialsDisplay();
+                updateTestimonialStats();
+                
+                alert('Testimonial deleted successfully!');
+            }
+        }
+        
+        // Toggle testimonial admin mode
+        toggleTestimonialAdminBtn.addEventListener('click', function() {
+            document.body.classList.toggle('testimonial-admin-mode');
+            const deleteButtons = document.querySelectorAll('.testimonial-card .delete-btn');
+            
+            if (document.body.classList.contains('testimonial-admin-mode')) {
+                deleteButtons.forEach(btn => btn.style.display = 'flex');
+                alert('Testimonial admin mode enabled. You can now delete testimonials.');
+            } else {
+                deleteButtons.forEach(btn => btn.style.display = 'none');
+                alert('Testimonial admin mode disabled.');
+            }
+        });
+        
+        // Add sample testimonials
+        addSampleTestimonialsBtn.addEventListener('click', function() {
+            testimonialsData = [...sampleTestimonials];
+            localStorage.setItem('wayneIntendTestimonials', JSON.stringify(testimonialsData));
+            updateTestimonialsDisplay();
+            updateTestimonialStats();
+            alert('Sample testimonials added!');
+        });
+        
+        // Clear all testimonials
+        clearAllTestimonialsBtn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to delete ALL testimonials? This cannot be undone.')) {
+                testimonialsData = [];
+                localStorage.setItem('wayneIntendTestimonials', JSON.stringify(testimonialsData));
+                updateTestimonialsDisplay();
+                updateTestimonialStats();
+                alert('All testimonials cleared!');
+            }
+        });
+        
+        // === ADMIN PANEL FUNCTIONALITY ===
+        
+        // Admin panel toggle
+        adminBtn.addEventListener('click', function() {
+            // Check password
+            const enteredPassword = prompt('Enter admin password:');
+            if (enteredPassword !== savedPassword) {
+                alert('Incorrect password');
+                return;
+            }
+            adminModal.style.display = 'flex';
+            loadSubmissions(); // Load submissions when opening admin panel
+        });
+        
+        // Close admin modal
+        closeAdmin.addEventListener('click', function() {
+            adminModal.style.display = 'none';
+        });
+        
+        // Tab switching
+        adminTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Update active tab
+                adminTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show active content
+                adminTabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tabId + 'Tab') {
+                        content.classList.add('active');
+                    }
+                });
+                
+                // Load submissions if contact tab is clicked
+                if (tabId === 'contact') {
+                    loadSubmissions();
+                }
+            });
+        });
+        
+        // Media type toggle
+        mediaType.addEventListener('change', function() {
+            if (this.value === 'image') {
+                imageUploadGroup.style.display = 'block';
+                videoUploadGroup.style.display = 'none';
+            } else {
+                imageUploadGroup.style.display = 'none';
+                videoUploadGroup.style.display = 'block';
+            }
+        });
+        
+        // Image preview
+        imageUpload.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Video URL preview
+        videoUrl.addEventListener('input', function() {
+            const url = this.value.trim();
+            if (url) {
+                // Check if it's a YouTube URL
+                if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                    let videoId = '';
+                    if (url.includes('youtube.com/watch?v=')) {
+                        videoId = url.split('v=')[1];
+                        const ampersandPosition = videoId.indexOf('&');
+                        if (ampersandPosition !== -1) {
+                            videoId = videoId.substring(0, ampersandPosition);
+                        }
+                    } else if (url.includes('youtu.be/')) {
+                        videoId = url.split('youtu.be/')[1];
+                    }
+                    
+                    if (videoId) {
+                        videoPreview.innerHTML = `<iframe width="100%" height="150" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+                    }
+                } else {
+                    videoPreview.innerHTML = `<p>Direct video link added</p>`;
+                }
+            } else {
+                videoPreview.innerHTML = `<p>Video will be embedded here</p>`;
+            }
+        });
+        
+        // Upload media to portfolio
+        uploadMediaBtn.addEventListener('click', function() {
+            const mediaTypeValue = mediaType.value;
+            const title = document.getElementById('mediaTitle').value.trim() || 'New Portfolio Item';
+            
+            if (mediaTypeValue === 'image') {
+                const file = imageUpload.files[0];
+                if (!file) {
+                    alert('Please select an image to upload');
+                    return;
+                }
+                
+                // Create a local URL for the image
+                const imageUrl = URL.createObjectURL(file);
+                portfolioData.images.push({
+                    src: imageUrl,
+                    title: title,
+                    type: 'image',
+                    isLocal: true
+                });
+                
+                alert('Image added to portfolio!');
+            } else {
+                const url = videoUrl.value.trim();
+                if (!url) {
+                    alert('Please enter a video URL');
+                    return;
+                }
+                
+                portfolioData.images.push({
+                    src: url,
+                    title: title,
+                    type: 'video'
+                });
+                
+                alert('Video added to portfolio!');
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('wayneIntendPortfolio', JSON.stringify(portfolioData));
+            
+            // Update display
+            updatePortfolioDisplay();
+            updateItemCount();
+            
+            // Clear form
+            clearForm();
+        });
+        
+        // Clear form
+        clearFormBtn.addEventListener('click', clearForm);
+        
+        function clearForm() {
+            imageUpload.value = '';
+            imagePreview.innerHTML = '<p>Image preview will appear here</p>';
+            videoUrl.value = '';
+            videoPreview.innerHTML = '<p>Video will be embedded here</p>';
+            document.getElementById('mediaTitle').value = '';
+            mediaType.value = 'image';
+            imageUploadGroup.style.display = 'block';
+            videoUploadGroup.style.display = 'none';
+        }
+        
+        // Toggle admin mode for deleting items
+        toggleAdminModeBtn.addEventListener('click', function() {
+            document.body.classList.toggle('admin-mode');
+            if (document.body.classList.contains('admin-mode')) {
+                this.textContent = 'Exit Admin Mode';
+                alert('Admin mode enabled. You can now delete portfolio items by clicking the red X.');
+            } else {
+                this.textContent = 'Toggle Admin Mode';
+                alert('Admin mode disabled.');
+            }
+        });
+        
+        // Delete portfolio item
+        function deletePortfolioItem(button) {
+            if (confirm('Are you sure you want to delete this item?')) {
+                const portfolioGrid = document.getElementById('portfolioGrid');
+                const items = Array.from(portfolioGrid.querySelectorAll('.portfolio-item'));
+                const index = items.indexOf(button.parentElement);
+                
+                if (index !== -1) {
+                    // Remove from portfolio data
+                    portfolioData.images.splice(index, 1);
+                    
+                    // Save to localStorage
+                    localStorage.setItem('wayneIntendPortfolio', JSON.stringify(portfolioData));
+                    
+                    // Update display
+                    updatePortfolioDisplay();
+                    updateItemCount();
+                    
+                    alert('Item deleted successfully!');
+                }
+            }
+        }
+        
+        // Update portfolio display
+        function updatePortfolioDisplay() {
+            const portfolioGrid = document.getElementById('portfolioGrid');
+            portfolioGrid.innerHTML = '';
+            
+            portfolioData.images.forEach((item, index) => {
+                const portfolioItem = document.createElement('div');
+                portfolioItem.className = 'portfolio-item';
+                
+                if (item.type === 'image') {
+                    portfolioItem.innerHTML = `
+                        <img src="${item.src}" alt="${item.title}" class="portfolio-img" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                    `;
+                } else {
+                    // Check if it's a YouTube video
+                    if (item.src.includes('youtube.com') || item.src.includes('youtu.be')) {
+                        let videoId = '';
+                        if (item.src.includes('youtube.com/watch?v=')) {
+                            videoId = item.src.split('v=')[1];
+                            const ampersandPosition = videoId.indexOf('&');
+                            if (ampersandPosition !== -1) {
+                                videoId = videoId.substring(0, ampersandPosition);
+                            }
+                        } else if (item.src.includes('youtu.be/')) {
+                            videoId = item.src.split('youtu.be/')[1];
+                        }
+                        
+                        if (videoId) {
+                            portfolioItem.innerHTML = `
+                                <iframe 
+                                    src="https://www.youtube.com/embed/${videoId}" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    class="portfolio-video">
+                                </iframe>
+                                <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                            `;
+                        } else {
+                            portfolioItem.innerHTML = `
+                                <div class="portfolio-placeholder">
+                                    <i class="fas fa-video"></i>
+                                    <p>${item.title}</p>
+                                </div>
+                                <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                            `;
+                        }
+                    } else {
+                        // Direct video link
+                        portfolioItem.innerHTML = `
+                            <video class="portfolio-video" controls>
+                                <source src="${item.src}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <button class="delete-btn" onclick="deletePortfolioItem(this)">×</button>
+                        `;
+                    }
+                }
+                
+                portfolioGrid.appendChild(portfolioItem);
+            });
+            
+            updateItemCount();
+        }
+        
+        // Update item count
+        function updateItemCount() {
+            document.getElementById('itemCount').textContent = portfolioData.images.length;
+        }
+        
+        // Save settings
+        saveSettingsBtn.addEventListener('click', function() {
+            // Save password
+            const password = adminPassword.value.trim();
+            if (password) {
+                savedPassword = password;
+                localStorage.setItem('wayneIntendAdminPassword', password);
+                alert('Admin password saved!');
+            }
+            
+            // Save hero background if uploaded
+            const heroFile = heroImage.files[0];
+            if (heroFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const heroBgUrl = e.target.result;
+                    localStorage.setItem('wayneIntendHeroBg', heroBgUrl);
+                    document.querySelector('.hero').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${heroBgUrl}')`;
+                    alert('Hero background updated!');
+                };
+                reader.readAsDataURL(heroFile);
+            }
+            
+            adminPassword.value = '';
+            heroImage.value = '';
+        });
+        
+        // === CONTACT SUBMISSIONS MANAGEMENT ===
+        let contactSubmissions = JSON.parse(localStorage.getItem('wayneIntendSubmissions')) || [];
+        
+        function loadSubmissions() {
+            const submissionsList = document.getElementById('submissionsList');
+            const totalSubmissionsEl = document.getElementById('totalSubmissions');
+            
+            if (contactSubmissions.length === 0) {
+                submissionsList.innerHTML = '<p>No submissions yet.</p>';
+                totalSubmissionsEl.textContent = '0';
+                return;
+            }
+            
+            let html = '<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse; min-width: 600px;">';
+            html += '<thead><tr style="background-color: #f5f5f5;"><th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Date</th><th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Name</th><th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Service</th><th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Phone</th><th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Action</th></tr></thead>';
+            html += '<tbody>';
+            
+            contactSubmissions.forEach((sub, index) => {
+                const date = new Date(sub.timestamp).toLocaleDateString('en-ZA', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                html += `
+                    <tr style="border-bottom: 1px solid #eee; ${index % 2 === 0 ? 'background-color: #f9f9f9;' : ''}">
+                        <td style="padding: 8px;">${date}</td>
+                        <td style="padding: 8px;">${sub.name}</td>
+                        <td style="padding: 8px;">${sub.service}</td>
+                        <td style="padding: 8px;">${sub.phone}</td>
+                        <td style="padding: 8px;">
+                            <button onclick="viewSubmission(${sub.id})" class="btn" style="padding: 5px 10px; font-size: 12px;">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button onclick="deleteSubmission(${sub.id})" class="btn" style="padding: 5px 10px; font-size: 12px; background-color: #dc3545;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += '</tbody></table></div>';
+            submissionsList.innerHTML = html;
+            totalSubmissionsEl.textContent = contactSubmissions.length;
+        }
+        
+        function viewSubmission(id) {
+            const submission = contactSubmissions.find(s => s.id === id);
+            
+            if (submission) {
+                const date = new Date(submission.timestamp).toLocaleDateString('en-ZA', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                alert(`Submission Details:\n\nDate: ${date}\nName: ${submission.name}\nEmail: ${submission.email}\nPhone: ${submission.phone}\nService: ${submission.service}\nMessage: ${submission.message}`);
+            }
+        }
+        
+        function deleteSubmission(id) {
+            if (confirm('Are you sure you want to delete this submission?')) {
+                contactSubmissions = contactSubmissions.filter(s => s.id !== id);
+                localStorage.setItem('wayneIntendSubmissions', JSON.stringify(contactSubmissions));
+                loadSubmissions();
+                updateSubmissionsCount();
+                alert('Submission deleted successfully!');
+            }
+        }
+        
+        function exportSubmissions() {
+            if (contactSubmissions.length === 0) {
+                alert('No submissions to export');
+                return;
+            }
+            
+            let csv = 'Date,Name,Email,Phone,Service,Message\n';
+            
+            contactSubmissions.forEach(sub => {
+                const date = new Date(sub.timestamp).toLocaleDateString('en-ZA', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                csv += `"${date}","${sub.name}","${sub.email}","${sub.phone}","${sub.service}","${sub.message.replace(/"/g, '""')}"\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `wayne-intend-submissions-${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+        }
+        
+        function clearAllSubmissions() {
+            if (confirm('Are you sure you want to delete ALL contact submissions? This cannot be undone.')) {
+                contactSubmissions = [];
+                localStorage.removeItem('wayneIntendSubmissions');
+                loadSubmissions();
+                updateSubmissionsCount();
+                alert('All submissions cleared!');
+            }
+        }
+        
+        function updateSubmissionsCount() {
+            const totalSubmissionsEl = document.getElementById('totalSubmissions');
+            if (totalSubmissionsEl) {
+                totalSubmissionsEl.textContent = contactSubmissions.length;
+            }
+        }
+    </script>
+</body>
+</html>
